@@ -1,0 +1,27 @@
+import { Button } from 'bootstrap'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import JumlahContext from '../context/JumlahProvider'
+
+
+const PenggunaanContext = () => {
+
+    const { angka, setAngka } = useContext(JumlahContext)
+
+
+
+    return (
+        <>
+            {angka}
+            <h1>pindah halaman aja</h1>
+            <button onClick={() => { console.log("f"); setAngka(angka + 1) }}>
+                tambah
+            </button>
+
+            <Link style={{ marginLeft: 40, }} to='/mahasiswa'><h3>mahasiswa</h3></Link>
+        </>
+
+    )
+}
+
+export default PenggunaanContext
